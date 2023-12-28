@@ -52,7 +52,7 @@ const Demo = () => {
       }, 5000); // Clear the error message after 5 seconds
       return;
     }
-
+    // Here, it checks if data is not null or undefined, and if data has a property called summary. If both conditions are true, it enters the if
     if (data?.summary) {
       const newArticle = { ...article, summary: data.summary };
       setArticle(newArticle);
