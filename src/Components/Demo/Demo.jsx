@@ -14,30 +14,29 @@ const Demo = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if the URL is valid before making the request
+    
     if (!isValidURL(article.url)) {
       setErrorFlash("Invalid URL. Please check the URL and try again.");
       setTimeout(() => {
         setErrorFlash("");
-      }, 5000); // Clear the error message after 5 seconds
+      }, 5000); 
       return;
     }
 
-    // Check if the length is selected
     if (!isValidLength(selectedLength)) {
       setErrorFlash("Please select the length of the summary.");
       setTimeout(() => {
         setErrorFlash("");
-      }, 5000); // Clear the error message after 5 seconds
+      }, 5000);
       return;
     }
 
-    setErrorFlash(""); // Clear any previous error messages
+    setErrorFlash(""); 
 
     const lengthMapping = {
       short: 1,
-      brief: 3,
-      detailed: 6,
+      brief: 6,
+      detailed: 14,
     };
 
     const { data, error: summaryError } = await getSummary({
